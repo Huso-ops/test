@@ -19,7 +19,7 @@ export class LoginService {
   async loginUser(user:UserLoginDto):Promise<any>{
       try {
           const existUser =  this.useRMongo.findOne({
-              email:user.mail
+              mail:user.mail
           }).exec();
 
          if((await existUser).mail){
@@ -34,7 +34,7 @@ export class LoginService {
              if(checkPwd){
                  const authJWT = jwt.sign({user:existUser},environment.jwtText);
                  const data = {...existUser, ...authJWT};
-                 return await {success:true ,value:data}
+                 return await {success:true ,value:authJWT}
              }else{
                  return await {success:false, response:'wrong pass or username'};
              }
@@ -43,7 +43,7 @@ export class LoginService {
             return await {success:false, response:'user does not exist'};
          }
       } catch (ex) {
-        return await {success:false, response:'something went wrong'};
+        return await {success:false, response:'something went wrong',ex};
       }
   }
   

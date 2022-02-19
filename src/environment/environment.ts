@@ -1,6 +1,6 @@
 export default {
     mongoUrl:
-      'mongodb+srv://udemy:Udemy_123@nestjs-jcbid.mongodb.net/test?retryWrites=true&w=majority',
+      'mongodb+srv://dogukanc760:kcinar22@cluster0.7hwvw.mongodb.net/BebegimHersey?retryWrites=true&w=majority',
     hashText: 'myStrongPasswordHashText',
     jwtText: '32dhfnct94q',
     cloudinary: {

@@ -2,10 +2,16 @@ import * as mongoose from 'mongoose';
 import { Document } from 'mongoose';
 
 export interface SettingModel extends Document {
-    sliderUrl:string;
-    sliderOrder:string;
-    showHome: boolean;
-    isActive: boolean;
+    mail1:string;
+    mail2:string;
+    gsm:string;
+    aboutUs:string;
+    fax:string;
+    telephone:string;
+    facebook:string;
+    instagram:string;
+    twitter:string;
+
     
   }
 
