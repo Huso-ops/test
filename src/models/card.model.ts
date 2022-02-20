@@ -1,17 +1,15 @@
-import { MongooseModule } from '@nestjs/mongoose';
-
 import * as mongoose from 'mongoose';
 import { ProductModel } from './product.model';
 import { UserModel } from './user.model';
 
-export class InventoryModel {
+export class CardModel {
   id: string;
-  product: ProductModel;
+  product: ProductModel["id"];
   description: string;
-  user: UserModel;
+  user: UserModel["id"];
 }
 
-export const InventorySchema = new mongoose.Schema({
+export const CardSchema = new mongoose.Schema({
   product: { type: Array, default: '' },
   description: { type: String, default: '' },
   user: { type: Array, default: '' },

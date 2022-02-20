@@ -19,6 +19,11 @@ import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
 import { TotalModule } from './total/total.module';
+import { CategoryModule } from './category/category.module';
+import { StockModule } from './stock/stock.module';
+import { CardModule } from './card/card.module';
+
+
 
 
 @Module({
@@ -27,6 +32,10 @@ import { TotalModule } from './total/total.module';
     UserModule,
     LibsModule,
     TotalModule,
+    CategoryModule,
+    StockModule,
+    CardModule,
+
 
     MongooseModule.forRoot(environment.mongoUrl),
 
