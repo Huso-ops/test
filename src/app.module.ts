@@ -24,6 +24,8 @@ import { StockModule } from './stock/stock.module';
 import { CardModule } from './card/card.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { CampaignModule } from './campaign/campaign.module';
+import { LoggerMiddleware } from './libs/middlewares/logger.middlware';
+import { MulterModule } from '@nestjs/platform-express';
 
 
 
@@ -42,7 +44,9 @@ import { CampaignModule } from './campaign/campaign.module';
 
 
     MongooseModule.forRoot(environment.mongoUrl),
-
+    MulterModule.register({
+      dest: './uploads',
+    }),
     LoginModule,
   ],
   controllers: [AppController],
@@ -56,6 +60,6 @@ import { CampaignModule } from './campaign/campaign.module';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-  
+  consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }

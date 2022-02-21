@@ -12,7 +12,7 @@ export interface ProductModel extends Document {
   contentDescSub: string;
   categoryId: CategoryModel;
   description: string;
-  image: string;
+  img: any;
   finalprice: object;
   subCategoryId: object;
   user: UserModel["id"];
@@ -26,7 +26,7 @@ export const ProductSchema = new mongoose.Schema({
   contentDescSub: { type: String, default: '' },
   categoryId: { type: Array, default: true },
   description: { type: String, default: '' },
-  img: { type: Object },
+  img: { type: Array },
   subCategoryId: { type: Array, default: true },
   user: { type: Array, default: '' },
 });
